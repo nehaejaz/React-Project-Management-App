@@ -16,9 +16,9 @@ export const signIn=(credentials)=>{
 
 } 
 
-export const singOut = () => {
+export const signOut = () => {
     return(dispatch,getState,{getFirebase}) => {
-        const firebase = firebase()
+        const firebase = getFirebase()
 
         firebase.auth().signOut()
         .then(()=>{
