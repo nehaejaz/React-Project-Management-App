@@ -1,4 +1,4 @@
-export const SignIn=(credentials)=>{
+export const signIn=(credentials)=>{
     return(dispatch,getState,{getFirebase})=>{
         //make Aysn call to db
         const firebase=getFirebase();
@@ -15,3 +15,14 @@ export const SignIn=(credentials)=>{
     }
 
 } 
+
+export const singOut = () => {
+    return(dispatch,getState,{getFirebase}) => {
+        const firebase = firebase()
+
+        firebase.auth().signOut()
+        .then(()=>{
+            dispatch({type:'SignOut_Success'})
+        })
+    }
+}
