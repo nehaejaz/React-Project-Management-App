@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import {signIn} from '../../store/actions/authActions'
 import {Redirect} from 'react-router-dom'
-
 class SignIn extends Component {
     state = {
         email: '',
@@ -58,7 +57,7 @@ const mapStateToProps=(state) => {
 }
 const mapDisatchToProps=(dispatch) => {
     return{
-        signIn: (creds) => dispatch(signIn(creds))
+        signIn: (creds) => dispatch(signIn(creds)),
     }
 
 }
